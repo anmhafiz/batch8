@@ -10,32 +10,23 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp5
 {
-    //public class User
-    //{
-    //    public string Name { get; set; }
-    //    public string ContactNo { get; set; }
-    //    public string Address { get; set; }
-    //}
+    
     public partial class coffeShop : Form
     {
-        private int ItemNo { get; set; }
-        private string[] NameList { get; set; }
-        private string[] ContactNoList { get; set; }
-        private string[] AddressList { get; set; }
-        private string[] ItemList { get; set; }
-        private int[] QuantityList { get; set; }
-        private double[] PriceList { get; set; }
+       String[] NameList = new string[20];
+           string[] ContactNoList = new string[20];
+           string[] AddressList = new string[20];
+            string[] ItemList = new string[20];
+          string[]  QuantityList = new string[20];
+        
+
+        int  ItemNo = 0;
+
 
         public coffeShop()
         {
             InitializeComponent();
-            NameList = new string[20];
-            ContactNoList = new string[20];
-            AddressList = new string[20];
-            ItemList = new string[20];
-            QuantityList = new int[20];
-            PriceList = new double[20];
-            ItemNo = 0;
+            
         }
         
         private void show_Click(object sender, EventArgs e)
@@ -64,19 +55,13 @@ namespace WindowsFormsApp5
                 }
                
 
-                NameList[ItemNo] = textBoxName.Text;
-                ContactNoList[ItemNo] = textBoxContract.Text;
-                AddressList[ItemNo] = textBoxAddress.Text;
-                ItemList[ItemNo] = item;
-                PriceList[ItemNo] = price;
-
-                ItemNo = ItemNo + 1;
+                
 
                 string output = "";
                 for (int i = 0; i < ItemNo; i++)
                 {
                     output += "Name :" + NameList[i] + "\n" + "Contact No: " + ContactNoList[i] + "\n" +
-                                           "Address :" + AddressList[i] + "\n" + "Item : " + ItemList[i] + "\n" + "Price :" + PriceList[i] + "\n\n\n";;
+                                           "Address :" + AddressList[i] + "\n" + "Item : " + ItemList[i] + "\n"  + "\n\n\n";;
                 }
        
                richTextBoxShow.Text = output;
@@ -85,14 +70,16 @@ namespace WindowsFormsApp5
             }
         }
 
-        private void comboBoxItem_SelectedIndexChanged(object sender, EventArgs e)
+        private void addButton_Click(object sender, EventArgs e)
         {
+            string item = comboBoxItem.Text;
+            NameList[ItemNo] = textBoxName.Text;
+            ContactNoList[ItemNo] = textBoxContract.Text;
+            AddressList[ItemNo] = textBoxAddress.Text;
+            ItemList[ItemNo] = item;
 
-        }
 
-        private void coffeShop_Load(object sender, EventArgs e)
-        {
-
+            ItemNo = ItemNo + 1;
         }
     }
 }

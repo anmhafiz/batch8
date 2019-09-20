@@ -41,6 +41,7 @@
             this.textBoxQuantity = new System.Windows.Forms.TextBox();
             this.richTextBoxShow = new System.Windows.Forms.RichTextBox();
             this.show = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -130,7 +131,6 @@
             this.comboBoxItem.Name = "comboBoxItem";
             this.comboBoxItem.Size = new System.Drawing.Size(121, 21);
             this.comboBoxItem.TabIndex = 9;
-            this.comboBoxItem.SelectedIndexChanged += new System.EventHandler(this.comboBoxItem_SelectedIndexChanged);
             // 
             // textBoxQuantity
             // 
@@ -149,7 +149,7 @@
             // 
             // show
             // 
-            this.show.Location = new System.Drawing.Point(268, 357);
+            this.show.Location = new System.Drawing.Point(138, 343);
             this.show.Name = "show";
             this.show.Size = new System.Drawing.Size(75, 23);
             this.show.TabIndex = 12;
@@ -157,11 +157,22 @@
             this.show.UseVisualStyleBackColor = true;
             this.show.Click += new System.EventHandler(this.show_Click);
             // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(303, 343);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 13;
+            this.addButton.Text = "ADD";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
             // coffeShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.show);
             this.Controls.Add(this.richTextBoxShow);
             this.Controls.Add(this.textBoxQuantity);
@@ -177,7 +188,6 @@
             this.Controls.Add(this.label1);
             this.Name = "coffeShop";
             this.Text = "Coffe Shop";
-            this.Load += new System.EventHandler(this.coffeShop_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +208,7 @@
         private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.RichTextBox richTextBoxShow;
         private System.Windows.Forms.Button show;
+        private System.Windows.Forms.Button addButton;
     }
 }
 
